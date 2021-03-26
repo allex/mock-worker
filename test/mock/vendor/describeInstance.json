@@ -1,0 +1,86 @@
+{
+  "code": 0,
+  "data": {
+    "components": {
+      "cloudVendorGroup": [{
+          "value": "1",
+          "text": "阿里云",
+          "id": 1
+        },
+        {
+          "value": "2",
+          "text": "天翼专属云",
+          "id": 2
+        }
+      ],
+      "cloudDistrict": [{
+          "text": "华中",
+          "value": "11"
+        },
+        {
+          "text": "华南",
+          "value": "12"
+        }
+      ],
+      "cloudVendor": [{
+          "id": 39,
+          "cloudVendorType": "ALIYUN_PUBLIC",
+          "status": 1,
+          "text": "阿里云-test-031603",
+          "value": "39"
+        },
+        {
+          "id": 38,
+          "cloudVendorType": "ALIYUN_PUBLIC",
+          "status": 1,
+          "text": "test",
+          "value": "38"
+        },
+        {
+          "id": 37,
+          "cloudVendorType": "ALIYUN_PUBLIC",
+          "status": 1,
+          "text": "阿里云-test-031602",
+          "value": "37"
+        },
+        {
+          "id": 31,
+          "cloudVendorType": "CTYUN_PRIVATE",
+          "status": 1,
+          "text": "阿里公有云-test",
+          "value": "31"
+        }
+      ]
+    },
+    "constraints": {
+      "cloudVendor": {
+        "cloudVendorGroup": {
+          "1": {
+            "values": ["39", "38", "37"]
+          },
+          "2": {
+            "values": ["39"]
+          }
+        },
+        "cloudDistrict": {
+          "11": {
+            "values": ["31", "37"]
+          },
+          "12": {
+            "values": ["38", "39"]
+          }
+        }
+      },
+      "cloudDistrict": {
+        "cloudVendorGroup": {
+          "1": {
+            "values": ["11", "12"]
+          },
+          "2": {
+            "values": ["12"]
+          }
+        }
+      }
+    }
+  }
+}
