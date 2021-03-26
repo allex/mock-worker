@@ -1,0 +1,29 @@
+{
+  "name": "mock-worker",
+  "version": "1.0.0",
+  "description": "mock worker middleware",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "node ./test/server.js",
+    "dev": "tsc -p . -w",
+    "build": "tsc -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/allex/mock-worker.git"
+  },
+  "keywords": [
+    "mock",
+    "api-server",
+    "mock-middleware"
+  ],
+  "author": "allex",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/allex/mock-worker/issues"
+  },
+  "homepage": "https://github.com/allex/mock-worker#readme",
+  "devDependencies": {
+    "ts-node": "^9.1.1"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "transpileOnly": true,
+  "compilerOptions": {
+    "allowJs": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "noImplicitAny": false,
+    "target": "es5",
+    "baseUrl": ".",
+    "outDir": "./dist",
+    "newLine": "lf"
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": [
+    "dist",
+    "node_modules",
+    "test"
+  ]
+}
