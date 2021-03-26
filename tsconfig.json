@@ -2,13 +2,16 @@
   "transpileOnly": true,
   "compilerOptions": {
     "allowJs": true,
+    "declaration": true,
+    "importHelpers": true,
     "module": "CommonJS",
     "moduleResolution": "node",
+    "newLine": "lf",
     "noImplicitAny": false,
     "target": "es5",
     "baseUrl": ".",
     "outDir": "./dist",
-    "newLine": "lf"
+    "strict": true
   },
   "include": [
     "**/*.ts"
