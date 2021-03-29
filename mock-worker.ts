@@ -1,9 +1,9 @@
-import * as p from 'path'
+import p from 'path'
 import { EventEmitter } from 'events'
-import * as chokidar from 'chokidar'
-import * as findUp from 'find-up'
+import chokidar from 'chokidar'
+import findUp from 'find-up'
 import Debugger from 'debug'
-import * as express from 'express'
+import express from 'express'
 import { debounce } from '@tdio/utils'
 
 export type MockWorkerOptions = {

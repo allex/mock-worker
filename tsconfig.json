@@ -2,6 +2,7 @@
   "transpileOnly": true,
   "compilerOptions": {
     "allowJs": true,
+    "esModuleInterop": true,
     "declaration": true,
     "importHelpers": true,
     "module": "CommonJS",
