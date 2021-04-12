@@ -1,6 +1,8 @@
 const p = require('path')
 const app = require('express')()
 
+console.log('start test server at 3001...')
+
 // require('@babel/register')
 
 app.get('/', function (req, res) {
@@ -8,9 +10,9 @@ app.get('/', function (req, res) {
 })
 
 app.use(require('../').middleware({
-  prefix: '/mock',
+  logLevel: 'debug',
+  prefix: '/api/',
   root: p.resolve(__dirname, './mock')
 }))
 
-console.log('start test server at 3001...')
 app.listen(3001)

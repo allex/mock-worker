@@ -6,11 +6,11 @@
     "declaration": true,
     "importHelpers": true,
     "module": "CommonJS",
+    "target": "es6",
     "moduleResolution": "node",
     "newLine": "lf",
     "noImplicitAny": false,
-    "target": "es5",
-    "baseUrl": ".",
+    "baseUrl": "./src",
     "outDir": "./dist",
     "strict": true
   },
