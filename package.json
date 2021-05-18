@@ -1,6 +1,6 @@
 {
   "name": "serve-middleware",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A serve middleware with localize api mock and multi proxies",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

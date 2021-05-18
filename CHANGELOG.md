@@ -1,6 +1,13 @@
-# Changelog
+# Change Log
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+### [1.0.2](https://github.com/allex/serve-middleware/compare/1.0.1...1.0.2) (2021-05-18)
+
+
+### Features
+
+* add proxy with setupProxy and proxy config initializer ([f850f0b](https://github.com/allex/serve-middleware/commit/f850f0b47c553efffca292cafed7b813fbc69635))
 
 ### 1.0.1 (2021-03-27)
 
