@@ -1,7 +1,7 @@
 {
-  "name": "mock-worker",
+  "name": "serve-middleware",
   "version": "1.0.1",
-  "description": "mock worker middleware",
+  "description": "A serve middleware with localize api mock and multi proxies",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -11,19 +11,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/allex/mock-worker.git"
+    "url": "git+https://github.com/allex/serve-middleware.git"
   },
   "keywords": [
     "mock",
-    "api-server",
-    "mock-middleware"
+    "serve",
+    "middleware",
+    "api-server"
   ],
   "author": "allex",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/allex/mock-worker/issues"
+    "url": "https://github.com/allex/serve-middleware/issues"
   },
-  "homepage": "https://github.com/allex/mock-worker#readme",
+  "homepage": "https://github.com/allex/serve-middleware#readme",
   "devDependencies": {
     "@types/node": "^14.14.36",
     "ts-node": "^9.1.1"
@@ -43,8 +44,5 @@
     "strip-json-comments": "^3.1.1",
     "tslib": "^2.1.0",
     "vars-expand": "^0.0.3"
-  },
-  "maintainers": [
-    "allex <allex.wxn@gmail.com>"
-  ]
+  }
 }

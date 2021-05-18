@@ -1,5 +1,7 @@
-mock-worker
+serve-middleware
 ---
+
+A serve middleware with localize api mock and multi proxies
 
 ## Features
 
@@ -7,103 +9,63 @@ mock-worker
 * Dynamic params routes and custom programming ability. eg,. `/api/foo/:id`
 * Built-in `typescript` types support. ([ts-node](https://www.npmjs.com/package/ts-node) manuall install required)
 * Auto reload and register mock routes. (w/o restart server when mock files changed)
-* Pure json or any text based api mock. (optional supports [mockjs](https://www.npmjs.com/package/mockjs) extenssion)
-
+* Pure json or any text based api mock. (optional supports [mockjs][3] extenssion)
+* [http-proxy-middleware][1] proxy is integrated. `.proxy.json`, `.proxy.js`
 
 ## Install
 
 ```sh
-$ yarn add mock-worker
+$ yarn add serve-middleware
 ```
 
+## APIs
+
+```js
+import { middleware } from 'serve-middleware'
+import express from 'express'
+
+const app = express()
+
+app.use(
+  middleware({
+    prefix: '/',
+    root: './mock'
+  })
+)
+```
+
+### Options
+
+* root: The serve routes root directorty, need a absolute path.
+* prefix: a baseurl for the server entry. eg: `/api`
+
+create `.proxy.json` in project’s root: (json config support env vars expand)
+
+```json
+{
+  "^/(api|image_pic_path)/": {
+    "target": "${API_PREFIX:-http://127.0.0.1:30006}",
+    "changeOrigin": true,
+    "pathRewrite": {
+      "^/api/": ""
+    }
+  },
+  "^/jaeger-ui": {
+    "target": "${JAEGER_UI_BASE:-http://127.0.0.1:3001}",
+    "changeOrigin": true,
+    "logLevel": "${PROXY_LOG_LEVEL:-info}"
+  }
+}
+```
 
 ## Usage
 
-Create test mock api server (or integrate as webpack server middleware) 
-For more details example, see [./test/](https://github.com/allex/mock-worker/test/mock/) 
-
-> Create a mock server
-
-```sh
-$ cat <<EOF > server.js
-const app = require('express')()
-
-app.get('/', (req, res) => { 
-  res.send('Hello World') 
-})
-
-app.use(require('mock-worker').middleware({
-  prefix: '/',
-  root: './mock'
-}))
-
-console.log('start test server at 3001...')
-app.listen(3001)
-EOF
-```
-
-> Add some example mocks
-
-params routes example:
-
-```sh
-$ mkdir -p ./mock && cat <<EOF > ./mock/user.ts
-type User = {
-  id: number;
-  username: string;
-  sex: number;
-}
-
-type ApiScheme<T> = {
-  [api: string]: T | ((req, res, next?) => T | void);
-}
-
-const userApis: ApiScheme<User> = {
-  'GET /user/:id': (req, res) => {
-    console.log({ url: req.url, params: req.params, query: req.query })
-    return {
-      id: req.params.id,
-      username: 'allex',
-      sex: 6
-    }
-  },
-  'PUT /user': {
-    id: 2,
-    username: 'kenny',
-    sex: 6
-  }
-}
-
-export default userApis
-EOF
-```
-
-pure api example:
-
-```sh
-$ mkdir -p ./mock && cat <<EOF > ./mock/foo.ts
-export default (req, res) => {
-  res.send(String(Date.now()) + Math.random())
-}
-EOF
-```
-
-> Start server
-
-```sh
-$ export DEBUG=mock-* && node server.js
-```
-
-> Enjoy it!
-
-```sh
-curl -X GET http://localhost/foo
-curl -X GET http://localhost/users/1
-curl -X PUT http://localhost/users
-```
+For details example, see [examples](https://github.com/allex/serve-middleware/test/mock/) 
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) Copyright (c) [Allex Wang][1]
+[MIT](http://opensource.org/licenses/MIT) Copyright (c) [Allex Wang][2]
 
-[1]: https://github.com/allex/
+[1]: https://github.com/chimurai/http-proxy-middleware
+[2]: https://github.com/allex/
+[3]: https://www.npmjs.com/package/mockjs

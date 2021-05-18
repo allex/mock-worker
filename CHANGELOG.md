@@ -7,4 +7,4 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### Features
 
-* add dynamic routes and additional params. ([16d8ccc](https://github.com/allex/mock-worker/commit/16d8ccc8f8b24d1370ee51a914bad4662c895f03))
+* add dynamic routes and additional params. ([16d8ccc](https://github.com/allex/serve-middleware/commit/16d8ccc8f8b24d1370ee51a914bad4662c895f03))
